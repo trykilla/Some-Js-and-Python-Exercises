@@ -17,9 +17,12 @@ Fetches pit durations for drivers in the latest session.
 
 ## Functions
 
-### `processPitDurations(allDrivers: any[], pitDurations: { [driverNumber: string]: number }): void`
+#### `processPitDurations(allDrivers: any[], pitDurations: { [driverNumber: string]: number }): void``
 Processes pit durations for drivers and logs those with durations less than 50 seconds in the latest session.
 
-### `getFinnishDriversKK(allDrivers: any[]): any[]`
+#### `getFinnishDriversKK(allDrivers: any[]): any[]`
 Filters and returns Finnish drivers with 'KK' in either their first name or last name.
 
+## Usage
+
+To run the program just do *tsc* in the working directory and then *npm run run:app*
