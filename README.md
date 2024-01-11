@@ -1,25 +1,30 @@
-# F1Api TypeScript Backend Framework
+# Singleton Pattern in TypeScript
 
-The F1Api TypeScript Backend Framework is a module designed to interact with the Formula 1 API, providing functionalities to retrieve data about drivers, pit durations, and additional features for data processing.
+The Singleton pattern is a design pattern that ensures a class has only one instance and provides a universal way to access that instance.
 
-## Class: F1Api
+## Singleton Class
 
 ### Constructor
-- `apiUrl`: Base URL of the Formula 1 API, defaulting to "https://api.openf1.org/v1".
+- The private constructor prevents direct instantiation of the class.
 
-### Methods
+### Method
 
-#### `async getAllDrivers(session: string): Promise<any>`
-Fetches data about all drivers in a specific session.
+#### `static getInstance(): Singleton`
+- Returns the sole instance of the class. If no instance exists, it creates one and returns it.
 
-#### `async getDriversByPits(): Promise<any>`
-Fetches pit durations for drivers in the latest session.
+#### `logMessage(message: string): void`
+- Prints a message to the console.
 
-## Functions
+## Example Usage
 
-### `processPitDurations(allDrivers: any[], pitDurations: { [driverNumber: string]: number }): void`
-Processes pit durations for drivers and logs those with durations less than 50 seconds in the latest session.
+```typescript
+const firstInstance = Singleton.getInstance();
+const secondInstance = Singleton.getInstance();
 
-### `getFinnishDriversKK(allDrivers: any[]): any[]`
-Filters and returns Finnish drivers with 'KK' in either their first name or last name.
+console.log("[!] Checking if both instances are the same...\n", firstInstance === secondInstance); // true
 
+firstInstance.logMessage("Hello World from instance 1");
+secondInstance.logMessage("Hello World from instance 2");
+```
+
+The `Singleton` pattern proves valuable when ensuring that only one instance of a class exists while providing a global means to access that instance.
