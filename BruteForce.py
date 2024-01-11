@@ -30,7 +30,7 @@ def bf_attack(target_pass, password_length, max_attempts=10000000):
 
 if __name__ == '__main__':
     proc_num = 3
-    target_pass = 'mipass'
+    target_pass = 'mipa'
     password_length = 1
 
     
