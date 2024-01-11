@@ -1,30 +1,28 @@
-# Singleton Pattern in TypeScript
+# Dictionary Attack Python Script
 
-The Singleton pattern is a design pattern that ensures a class has only one instance and provides a universal way to access that instance.
+## Overview
 
-## Singleton Class
+This Python script simulates a dictionary attack on a password using a list of common passwords and their variations. The attack involves hashing each password and comparing it with a target hashed password.
 
-### Constructor
-- The private constructor prevents direct instantiation of the class.
+## Usage
 
-### Method
+Run the script using the command: `./DictionaryAttack`.
 
-#### `static getInstance(): Singleton`
-- Returns the sole instance of the class. If no instance exists, it creates one and returns it.
+## Features
 
-#### `logMessage(message: string): void`
-- Prints a message to the console.
+- Colors for the output.
+- Common passwords and variations are predefined to simulate attacks using hashed passwords.
 
-## Example Usage
+## Script Details
 
-```typescript
-const firstInstance = Singleton.getInstance();
-const secondInstance = Singleton.getInstance();
+- The `DictAttack` class initializes with a target hashed password, common passwords, and variations.
+- The `attempt_attack` method iterates through possible passwords and variations, hashes them, and checks for a match.
+- If a match is found, the script prints the password in green; otherwise, it prints a failure message in red.
 
-console.log("[!] Checking if both instances are the same...\n", firstInstance === secondInstance); // true
+## Example
 
-firstInstance.logMessage("Hello World from instance 1");
-secondInstance.logMessage("Hello World from instance 2");
+```bash
+./DictionaryAttack.py
 ```
 
-The `Singleton` pattern proves valuable when ensuring that only one instance of a class exists while providing a global means to access that instance.
+You can also run *run.sh* to run the script.
